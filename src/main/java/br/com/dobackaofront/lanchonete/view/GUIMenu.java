@@ -4,6 +4,8 @@
  */
 package br.com.dobackaofront.lanchonete.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -70,8 +72,18 @@ public class GUIMenu extends javax.swing.JFrame {
         jLabelCadastroLanchePreco.setText("Preço:");
 
         jButtonCadastroLancheSalvar.setText("Salvar");
+        jButtonCadastroLancheSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroLancheSalvarActionPerformed(evt);
+            }
+        });
 
         jButtonCadastroLancheCancelar.setText("Cancelar");
+        jButtonCadastroLancheCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroLancheCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFrameCadastroLancheLayout = new javax.swing.GroupLayout(jInternalFrameCadastroLanche.getContentPane());
         jInternalFrameCadastroLanche.getContentPane().setLayout(jInternalFrameCadastroLancheLayout);
@@ -126,6 +138,11 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenuItemCadastroLanche.setText("Cadastro");
 
         jMenuCadastroLanche.setText("Lanche");
+        jMenuCadastroLanche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuCadastroLancheActionPerformed(evt);
+            }
+        });
         jMenuItemCadastroLanche.add(jMenuCadastroLanche);
 
         jMenuBarPrincipal.add(jMenuItemCadastroLanche);
@@ -167,37 +184,55 @@ public class GUIMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuCadastroLancheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadastroLancheActionPerformed
+    jInternalFrameCadastroLanche.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuCadastroLancheActionPerformed
+
+    private void jButtonCadastroLancheCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroLancheCancelarActionPerformed
+        // TODO add your handling code here:
+        jTextFieldCadastroLancheNome.setText("");
+        jTextFieldCadastroLanchePreco.setText("");
+        jInternalFrameCadastroLanche.setVisible(false);
+    }//GEN-LAST:event_jButtonCadastroLancheCancelarActionPerformed
+
+    private void jButtonCadastroLancheSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroLancheSalvarActionPerformed
+   // TODO add your handling code here:
+         String nome = jTextFieldCadastroLancheNome.getText();
+
+    if (nome.equals("")) {
+
+        JOptionPane.showMessageDialog(rootPane,"O campo Nome do Lanche está vazio!");
+
+    } else {
+
+        String preco = jTextFieldCadastroLanchePreco.getText();
+
+        if (preco.equals("")) {
+
+            JOptionPane.showMessageDialog(rootPane,"O campo Preço está vazio!");
+
+        } else {
+            try {
+                double precoCapturado = Double.parseDouble(preco);
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(rootPane,"Preencha o preço do lanche apenas com números separados por por ponto ao invés de vírgula!");
+            }
+        }
+
+    }
+    }//GEN-LAST:event_jButtonCadastroLancheSalvarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        GUIMenu janelaPrincipal = new GUIMenu();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIMenu().setVisible(true);
+                janelaPrincipal.setVisible(true);
+                janelaPrincipal.jInternalFrameCadastroLanche.setVisible(false);
             }
         });
     }
