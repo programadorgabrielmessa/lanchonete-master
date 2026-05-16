@@ -4,6 +4,7 @@
  */
 package br.com.dobackaofront.lanchonete.view;
 
+import br.com.dobackaofront.lanchonete.model.Lanche;
 import javax.swing.JOptionPane;
 
 /**
@@ -213,7 +214,10 @@ public class GUIMenu extends javax.swing.JFrame {
 
         } else {
             try {
-                double precoCapturado = Double.parseDouble(preco);
+                double precoConvertido = Double.parseDouble(preco);
+                Lanche lanche = new Lanche(nome, precoConvertido);
+                lanche.apresentarLanche();
+                
             } catch(Exception e){
                 JOptionPane.showMessageDialog(rootPane,"Preencha o preço do lanche apenas com números separados por por ponto ao invés de vírgula!");
             }
