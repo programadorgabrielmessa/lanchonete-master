@@ -1,5 +1,7 @@
-br\com\dobackaofront\lanchonete\Lanchonete.class
-br\com\dobackaofront\lanchonete\view\GUIMenu.class
+br\com\dobackaofront\lanchonete\view\GUIMenu$4.class
+br\com\dobackaofront\lanchonete\model\Lanche.class
 br\com\dobackaofront\lanchonete\view\GUIMenu$3.class
 br\com\dobackaofront\lanchonete\view\GUIMenu$1.class
+br\com\dobackaofront\lanchonete\Lanchonete.class
+br\com\dobackaofront\lanchonete\view\GUIMenu.class
 br\com\dobackaofront\lanchonete\view\GUIMenu$2.class

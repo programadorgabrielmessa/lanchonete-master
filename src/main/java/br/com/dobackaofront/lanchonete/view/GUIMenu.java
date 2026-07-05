@@ -218,8 +218,14 @@ public class GUIMenu extends javax.swing.JFrame {
                 Lanche lanche = new Lanche(nome, precoConvertido);
                 lanche.apresentarLanche();
                 
+                jTextFieldCadastroLancheNome.setText("");
+                jTextFieldCadastroLanchePreco.setText("");
+                
+                JOptionPane.showMessageDialog(rootPane,"O Lanche "+nome+" foi cadastro com Sucesso!");
+                
             } catch(Exception e){
                 JOptionPane.showMessageDialog(rootPane,"Preencha o preço do lanche apenas com números separados por por ponto ao invés de vírgula!");
+                
             }
         }
 
