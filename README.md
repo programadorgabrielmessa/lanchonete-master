@@ -1,214 +1,54 @@
-# 🍔 Lanchonete Back ao Front
+# Lanchonete Back ao Front
 
-Sistema desktop desenvolvido em Java com foco no aprendizado de Programação Orientada a Objetos, Java Swing, validação de formulários e estruturação de aplicações empresariais.
+Protótipo desktop de estudo em Java para praticar orientação a objetos, interface Swing e validação de um formulário de lanches.
 
----
+[Portfólio e evolução dos projetos](https://github.com/programadorgabrielmessa/Projeto-de-um-sistema-de-cadastro-com-banco-de-dados-mongodb/blob/master/PORTFOLIO.md)
 
-# 📌 Sobre o Projeto
+## Fluxo implementado na interface
 
-O projeto **Lanchonete Back ao Front** foi criado com o objetivo de praticar conceitos fundamentais do desenvolvimento Java, simulando um sistema de cadastro de lanches utilizado em ambientes comerciais.
+1. O menu “Cadastro > Lanche” abre o formulário.
+2. O botão “Salvar” verifica nome e preço vazios.
+3. O preço é convertido para número com ponto decimal.
+4. Um objeto `Lanche` é criado e apresentado no console.
+5. O botão “Cancelar” limpa os campos e fecha o formulário interno.
 
-A aplicação possui interface gráfica desenvolvida com Java Swing e utiliza conceitos importantes da programação profissional como:
+## Tecnologias e organização
 
-* Programação Orientada a Objetos (POO)
-* Encapsulamento
-* Getters e Setters
-* Eventos gráficos
-* Validação de formulários
-* Organização em camadas
-* Estrutura MVC
-* CRUD básico
+Java · Swing · Maven · Apache NetBeans · JDBC
 
----
+| Componente | Papel atual |
+| --- | --- |
+| `model/Lanche.java` | Nome, preço, construtor, getters, setters e apresentação do objeto |
+| `view/GUIMenu.java` | Menus, formulário, eventos e validação |
+| `controller/Banco.java` | Estudo de conexão JDBC, leitura de script e inserção parametrizada |
+| `pom.xml` | Dependências e configuração Maven |
 
-# 🖥️ Tecnologias Utilizadas
+Os arquivos Java ficam em `src/main/java/br/com/dobackaofront/lanchonete/`.
 
-## Backend / Linguagem
+## Situação da integração com banco
 
-* Java
-* Java Swing
+A classe `Banco` contém código de conexão e `INSERT` com `PreparedStatement`. O botão “Salvar” da interface ainda não chama essa classe, e o arquivo `banco.sql` ainda não define um esquema. Assim, o fluxo da interface atual não persiste o lanche no MySQL e ainda não representa um CRUD completo.
 
-## IDE
+Os menus de edição, pesquisa e vendas fazem parte da interface em construção.
 
-* Apache NetBeans
+## Abrir e demonstrar
 
-## Gerenciamento de Dependências
-
-* Maven
-
----
-
-# 📂 Estrutura do Projeto
+Abra o projeto Maven no NetBeans e execute a classe:
 
 ```text
-src/
-│
-├── controller/
-│
-├── model/
-│   └── Lanche.java
-│
-├── view/
-│   └── GUIMenu.java
+br.com.dobackaofront.lanchonete.view.GUIMenu
 ```
 
----
+O `pom.xml` atual configura JDK 25 e uma dependência local `AbsoluteLayout` criada pelo NetBeans. Esses requisitos devem ser resolvidos no ambiente antes da compilação. A configuração e a execução Java não foram validadas nesta revisão.
 
-# 📚 Conceitos Aplicados
+Para demonstrar a lógica implementada, teste os campos vazios, um preço não numérico e um preço como `12.50`; observe a criação do objeto no console.
 
-## ✔ Programação Orientada a Objetos
+## Evolução verificável
 
-Criação da classe:
+- Maio de 2026: [início do protótipo](https://github.com/programadorgabrielmessa/lanchonete-master/commit/1407c0559b989f5d278af8bc96f1b3b64a48ae6d).
+- Maio de 2026: [cadastro e validação](https://github.com/programadorgabrielmessa/lanchonete-master/commit/daac75c6cfe42447b0c04be1ff028e319e8cf82a).
+- Julho a setembro de 2026: estudo e versionamento da camada de banco. [Commit de setembro](https://github.com/programadorgabrielmessa/lanchonete-master/commit/4dade9844e422430c4e8ad8a3a8d100ae19acf46).
 
-```java
-public class Lanche
-```
+Próximas etapas do projeto: integrar persistência ao formulário, criar o esquema, acrescentar consulta/edição/exclusão e testes de integração.
 
-Representando objetos reais do sistema.
-
----
-
-## ✔ Encapsulamento
-
-Uso de atributos privados:
-
-```java
-private String nome;
-private double preco;
-```
-
----
-
-## ✔ Getters e Setters
-
-Manipulação segura dos dados:
-
-```java
-getNome()
-setNome()
-getPreco()
-setPreco()
-```
-
----
-
-## ✔ Eventos Java Swing
-
-Manipulação de eventos de botões e menus:
-
-```java
-ActionPerformed
-```
-
----
-
-## ✔ Validação de Campos
-
-Verificação de campos vazios antes do cadastro:
-
-```java
-if(nome.equals(""))
-```
-
----
-
-# 🎯 Funcionalidades
-
-* Cadastro de lanches
-* Validação de formulário
-* Interface gráfica desktop
-* Menu de navegação
-* Campos de nome e preço
-* Botão salvar
-* Botão cancelar
-* Mensagens de validação com JOptionPane
-
----
-
-# 🖼️ Interface do Sistema
-
-O sistema possui interface gráfica desktop utilizando:
-
-* JFrame
-* JInternalFrame
-* JTextField
-* JButton
-* JMenuBar
-* JOptionPane
-
----
-
-# 🚀 Objetivo do Projeto
-
-Este projeto foi desenvolvido para fortalecer conhecimentos em:
-
-* Desenvolvimento Java
-* Estruturação de sistemas
-* Interfaces gráficas
-* Lógica de programação
-* CRUD
-* Arquitetura de software
-
-Além de servir como base para evolução futura em tecnologias modernas como:
-
-* Spring Boot
-* APIs REST
-* React
-* Banco de Dados
-* Sistemas Web
-
----
-
-# 📖 Aprendizados
-
-Durante o desenvolvimento foram praticados conceitos como:
-
-* Criação de classes
-* Construtores
-* Encapsulamento
-* Eventos gráficos
-* Captura de dados da interface
-* Manipulação de componentes Swing
-* Estrutura MVC
-* Organização de pacotes
-
----
-
-# 👨‍💻 Autor
-
-Gabriel Rodrigues de Almeida Messa
-
-📚 Tecnólogo em Análise e Desenvolvimento de Sistemas
-
-💻 Estudando:
-
-* Java
-* Java Swing
-* HTML
-* CSS
-* JavaScript
-* Python
-* SQL
-
-🔗 GitHub:
-[programadorgabrielmessa](https://github.com/programadorgabrielmessa?utm_source=chatgpt.com)
-
----
-
-# 📌 Status do Projeto
-
-🚧 Projeto em desenvolvimento 🚧
-
----
-
-# 🔥 Futuras Melhorias
-
-* Integração com banco de dados
-* CRUD completo
-* Tela de edição
-* Tela de pesquisa
-* Sistema de vendas
-* Relatórios
-* Persistência de dados
-* Migração futura para aplicações web
-
+**Autor:** Gabriel Rodrigues de Almeida Messa. Projeto pessoal de aprendizado.
