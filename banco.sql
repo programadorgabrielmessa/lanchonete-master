@@ -1,9 +1,18 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/SQLTemplate.sql to edit this template
- */
-/**
- * Author:  User
- * Created: 12 de jul. de 2026
- */
+CREATE DATABASE IF NOT EXISTS lanchonete
+    DEFAULT CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
 
+USE lanchonete;
+
+CREATE TABLE IF NOT EXISTS lanche (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DOUBLE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS carrinho (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DOUBLE NOT NULL,
+    quantidade INT NOT NULL
+);
