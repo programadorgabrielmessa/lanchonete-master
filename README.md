@@ -1,6 +1,6 @@
 # Lanchonete Back ao Front
 
-Projeto de estudo de Gabriel Rodrigues de Almeida Messa com Java, Swing, Maven e MySQL. Esta versão integra as telas e o código do professor Olival Paulino, do curso Do Back ao Front. [Projeto original](https://github.com/olivalpaulino/lanchonete/tree/7a824e7c8802ea992a22cacb56706f4064f8bbd7)
+Projeto de estudo de Gabriel Rodrigues de Almeida Messa com Java, Swing, Maven e MySQL.
 
 [Portfólio e evolução dos projetos](https://github.com/programadorgabrielmessa/Projeto-de-um-sistema-de-cadastro-com-banco-de-dados-mongodb/blob/master/PORTFOLIO.md)
 
@@ -34,3 +34,8 @@ mvn compile org.codehaus.mojo:exec-maven-plugin:3.1.0:java
 
 - Maio de 2026 — [início do protótipo](https://github.com/programadorgabrielmessa/lanchonete-master/commit/1407c0559b989f5d278af8bc96f1b3b64a48ae6d) e [validação do cadastro](https://github.com/programadorgabrielmessa/lanchonete-master/commit/daac75c6cfe42447b0c04be1ff028e319e8cf82a).
 - Julho a setembro de 2026 — estudo da conexão JDBC e da camada de banco. [Commit de setembro](https://github.com/programadorgabrielmessa/lanchonete-master/commit/4dade9844e422430c4e8ad8a3a8d100ae19acf46)
+
+## Créditos
+
+- **Gabriel Rodrigues de Almeida Messa** desenvolveu o protótipo deste projeto, o formulário de cadastro em Swing, a validação dos campos e a primeira versão da camada JDBC.
+- **Olival Paulino**, professor do curso Do Back ao Front, é o autor do projeto original que serviu de base para as telas e funcionalidades integradas nesta versão. [Projeto original](https://github.com/olivalpaulino/lanchonete/tree/7a824e7c8802ea992a22cacb56706f4064f8bbd7)
